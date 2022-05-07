@@ -95,9 +95,9 @@ for (let i = 0; i < 3; i++) {
 
 #### جواب: ج
 
-Because of the event queue in JavaScript, the `setTimeout` callback function is called _after_ the loop has been executed. Since the variable `i` in the first loop was declared using the `var` keyword, this value was global. During the loop, we incremented the value of `i` by `1` each time, using the unary operator `++`. By the time the `setTimeout` callback function was invoked, `i` was equal to `3` in the first example.
+به دلیل صف رویداد در جاوا اسکریپت، تابع `setTimeout` پس از اجرای حلقه فراخوانی می شود.  از آنجایی که متغیر `i` در اولین حلقه با استفاده از کلمه کلیدی `var` اعلام شد، این مقدار جهانی بود.  در طول حلقه، هر بار با استفاده از عملگر یگانه (unary)`++`، مقدار `i` را `1` افزایش دادیم.  تا زمانی که تابع `setTimeout` فراخوانی شد، `i` در مثال اول برابر با `3` بود.
 
-In the second loop, the variable `i` was declared using the `let` keyworد: variables declared with the `let` (and `const`) keyword are block-scoped (a block is anything between `{ }`). During each iteration, `i` will have a new value, and each value is scoped inside the loop.
+ در حلقه دوم، متغیر `i` با استفاده از کلمه کلیدی `let` اعلام شد: متغیرهای اعلام شده با کلمه کلیدی `let` (و `const`) دارای محدوده بلوکی هستند (بلوک هر چیزی بین `{ }` است).  در طول هر تکرار، `i` یک مقدار جدید خواهد داشت و هر مقدار در داخل حلقه قرار می گیرد. 
 
 </p>
 </details>
@@ -128,13 +128,13 @@ console.log(shape.perimeter());
 <p>
 
 #### جواب: ب
+	
+توجه داشته باشید که مقدار `diameter` یک تابع منظم است، در حالی که مقدار `perimeter` یک تابع پیکانی است.
 
-Note that the value of `diameter` is a regular function, whereas the value of `perimeter` is an arrow function.
+ با توابع فلش (جهت دار)، کلمه کلیدی `this` بر خلاف توابع معمولی به محدوده فعلی اطراف آن اشاره دارد!  این بدان معنی است که وقتی `perimeter` را صدا می زنیم، به جسم شکل اشاره نمی کند، بلکه به محدوده اطراف آن (برای مثال پنجره) اشاره دارد.
 
-With arrow functions, the `this` keyword refers to its current surrounding scope, unlike regular functions! This means that when we call `perimeter`, it doesn't refer to the shape object, but to its surrounding scope (window for example).
-
-There is no value `radius` on that object, which returns `NaN`.
-
+ هیچ مقدار `radius` در آن شی وجود ندارد که `NaN` را برمی گرداند. 
+	
 </p>
 </details>
 
@@ -156,16 +156,16 @@ There is no value `radius` on that object, which returns `NaN`.
 
 #### جواب: الف
 
-The unary plus tries to convert an operand to a number. `true` is `1`, and `false` is `0`.
+یک علامت جمع تنها در پشت یک عملوند (unary plus) سعی می کند یک عملوند را به عدد تبدیل کند. `true` را تبدیل به `1` و `false` را تبدیل به `0` میکند.
 
-The string `'Lydia'` is a truthy value. What we're actually asking, is "is this truthy value falsy?". This returns `false`.
+ رشته `Lydia` یک مقدار واقعی است.  چیزی که ما واقعاً می‌پرسیم این است که `آیا این ارزش واقعی نادرست است؟`.  این `false` را برمی گرداند. 
 
 </p>
 </details>
 
 ---
 
-###### 5. Which one is true?
+###### 5. کدوم یکی درسته؟
 
 ```javascript
 const bird = {
